@@ -23,9 +23,10 @@ public class SkrivBlogg {
 			skriver.close();
 		}  catch (FileNotFoundException e) {
 			System.out.println("fant ikke fil"); 
+			return false; 
 		}
 		finally {
-			System.out.println("tekst ble skrevet ut"); 
+			System.out.println("tekst ble skrevet ut");  
 		}
 		return true; 
 	}
