@@ -77,7 +77,7 @@ public abstract class Innlegg {
 	public String toString() {
 		
 		String str; 
-		str = (id + "/" + bruker + "/" + dato + "n" + likes + "\n"); 
+		str = (id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n"); 
 		return str; 
 				
 	}
