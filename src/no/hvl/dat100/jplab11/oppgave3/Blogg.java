@@ -66,9 +66,16 @@ public class Blogg {
 	}
 	
 	public String toString() {
-		int lengde = innleggstabell.length;
-		String finalstr = String.format("%d", lengde);
+		String str = nesteledig + "\n";
+		for (int i = 0; i < nesteledig; i++){
+			str += innleggstabell[i].getClass() + "\n" + innleggstabell[i].getBruker() + "\n"
+					+ innleggstabell[i].getDato() + "\n" + innleggstabell[i].getLikes() + "\n"
+					+ innleggstabell[i];
+		}
+		return str;
 	}
+	// "\"\\n\""
+
 
 	// valgfrie oppgaver nedenfor
 	
