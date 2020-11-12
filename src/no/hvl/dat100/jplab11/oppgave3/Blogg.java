@@ -39,55 +39,41 @@ public class Blogg {
 
 	public boolean finnes(Innlegg innlegg) {
 		int i = 0;
+		boolean funnet = false;
 		while (!innlegg.erLik(innlegg) && i <= innleggstabell.length) {
 			i++;
 		}
 		if (i < innleggstabell.length)
-			return true;
-		else
-			return false;
+			funnet = true;
+		return funnet;
 	}
 
 	public boolean ledigPlass() {
+		boolean ledig = false;
 		if (nesteledig < innleggstabell.length)
-			return true;
-		else
-			return false;
+			ledig = true;
+		return ledig;
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
-		if (ledigPlass() && !finnes(innlegg)){
+		boolean lagtTil = false;
+		if (ledigPlass() && finnes(innlegg)){
 			innleggstabell[nesteledig] = innlegg;
 			nesteledig++;
-			return true;
+			lagtTil = true;
 		}
-		else
-			return false;
+		return lagtTil;
 	}
-	
-	//public String toString() {
-	//	StringBuilder str = new StringBuilder(nesteledig);
-	//	for (int i = 0; i < nesteledig; i++){
-	//		//str.append("\n"+innleggstabell[i].getClass());
-	//		str.append("\n"+innleggstabell[i].getBruker());
-	//		str.append("\n"+innleggstabell[i].getDato());
-	//		str.append("\n"+innleggstabell[i].getLikes());
-	//		//str.append("\n"+innleggstabell[i]);
-	//	}
-//
-	//	//String finalString = str.toString();
-	//	return str.toString();
-	//}
 
 	public String toString() {
-		StringBuilder str = new StringBuilder(nesteledig);
+		String str = nesteledig + "\n";
 		for (int i = 0; i < nesteledig; i++){
-			str.append("\n" + innleggstabell[i].toString());
+			str += innleggstabell[i].toString();
 		}
-		return str.toString();
+
+		return str;
 	}
 	// "\"\\n\""
-
 
 	// valgfrie oppgaver nedenfor
 	
