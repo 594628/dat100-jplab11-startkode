@@ -64,8 +64,8 @@ public abstract class Innlegg {
 	@Override
 	public String toString() {
 		String str; 
-		str = (id + "/" + bruker + "/" + dato + "n" + likes + "\n"); 
-		return str;
+		str = (id + "\n" + bruker + "\n" + dato + "\n" + likes + "\n"); 
+		return str; 
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6

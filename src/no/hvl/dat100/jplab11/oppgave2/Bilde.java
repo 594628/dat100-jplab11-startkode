@@ -4,28 +4,45 @@ import no.hvl.dat100.jplab11.common.TODO;
 
 public class Bilde extends Tekst {
 
-	// TODO - objekt variable
+	private String url; 
+	
 	
 	public Bilde(int id, String bruker, String dato, String tekst, String url) {
-		throw new UnsupportedOperationException(TODO.constructor("Bilde"));
+		
+		id = super.getId();
+		bruker = super.getBruker(); 
+		dato = super.getDato(); 
+		tekst = super.getTekst(); 
+		url = this.url; 
+		
+		
 	}
 
 	public Bilde(int id, String bruker, String dato, int likes, String tekst, String url) {
-		throw new UnsupportedOperationException(TODO.constructor("Bilde"));
+		
+		id = super.getId();
+		bruker = super.getBruker(); 
+		dato = super.getDato(); 
+		tekst = super.getTekst(); 
+		url = this.url; 
+		likes = super.getLikes(); 
+		
 	}
+		
 	
 	public String getUrl() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.url; 
 
 	}
 
 	public void setUrl(String url) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.url = url; 
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method ());
+		String str = ("BILDE" + "\n" + super.getId() + "\n" + super.getBruker() + "\n" + super.getDato() + "\n" + super.getLikes() + "\n" + getTekst() + this.url +  "\n"  );
+		return str; 
 
 	}
 
