@@ -3,7 +3,6 @@ package no.hvl.dat100.jplab11.oppgave1;
 import no.hvl.dat100.jplab11.common.TODO;
 
 public abstract class Innlegg {
-	
 	private int id; 
 	private String bruker; 
 	private String dato; 
@@ -11,13 +10,10 @@ public abstract class Innlegg {
 	
 	
 	public Innlegg() {
-		
-		
-		
+
 	}
 	
 	public Innlegg(int id, String bruker, String dato) {
-
 		this.id = id; 
 		this.bruker = bruker; 
 		this.dato = dato; 
@@ -25,18 +21,14 @@ public abstract class Innlegg {
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
-
 		this.id = id; 
 		this.bruker = bruker; 
 		this.dato = dato; 
-		this.likes = likes; 
-		
+		this.likes = likes;
 	}
 	
 	public String getBruker() {
-		
-		return this.bruker; 
-
+		return this.bruker;
 	}
 
 	public void setBruker(String bruker) {
@@ -44,8 +36,7 @@ public abstract class Innlegg {
 	}
 
 	public String getDato() {
-		return this.dato; 
-		
+		return this.dato;
 	}
 
 	public void setDato(String dato) {
@@ -53,13 +44,11 @@ public abstract class Innlegg {
 	}
 
 	public int getId() {
-		return this.id; 
-
+		return this.id;
 	}
 
 	public int getLikes() {
-		return this.likes; 
-
+		return this.likes;
 	}
 	
 	public void doLike () {
@@ -69,23 +58,18 @@ public abstract class Innlegg {
 	public boolean erLik(Innlegg innlegg) {
 		if (innlegg.id == id) {
 			return true; 
-		}else return false; 
-
+		}else return false;
 	}
 	
 	@Override
 	public String toString() {
-		
 		String str; 
 		str = (id + "/" + bruker + "/" + dato + "n" + likes + "\n"); 
-		return str; 
-				
+		return str;
 	}
 	
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
-		
 		throw new UnsupportedOperationException(TODO.method());
-				
 	}
 }

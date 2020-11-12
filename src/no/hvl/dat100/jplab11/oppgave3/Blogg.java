@@ -5,46 +5,69 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 
 public class Blogg {
 
-	// TODO: objektvariable 
+	Innlegg[] innleggstabell;
+	int nesteledig;
 
 	public Blogg() {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		innleggstabell = new Innlegg[20];
+		nesteledig = 0;
 	}
 
 	public Blogg(int lengde) {
-		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
+		innleggstabell = new Innlegg[lengde];
+		nesteledig = 0;
 	}
 
 	public int getAntall() {
-		throw new UnsupportedOperationException(TODO.method());
+		return nesteledig;
 	}
 	
 	public Innlegg[] getSamling() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		return innleggstabell;
 	}
 	
 	public int finnInnlegg(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+		int i = 0;
+		while (!innlegg.erLik(innlegg) && i <= innleggstabell.length) {
+			i++;
+		}
+		if (i < innleggstabell.length)
+			return i;
+		else
+			return -1;
 	}
 
 	public boolean finnes(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		int i = 0;
+		while (!innlegg.erLik(innlegg) && i <= innleggstabell.length) {
+			i++;
+		}
+		if (i < innleggstabell.length)
+			return true;
+		else
+			return false;
 	}
 
 	public boolean ledigPlass() {
-		throw new UnsupportedOperationException(TODO.method());
-
+		if (nesteledig < innleggstabell.length)
+			return true;
+		else
+			return false;
 	}
 	
 	public boolean leggTil(Innlegg innlegg) {
-
-		throw new UnsupportedOperationException(TODO.method());
+		if (ledigPlass() && !finnes(innlegg)){
+			innleggstabell[nesteledig] = innlegg;
+			nesteledig++;
+			return true;
+		}
+		else
+			return false;
 	}
 	
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		int lengde = innleggstabell.length;
+		String finalstr = String.format("%d", lengde);
 	}
 
 	// valgfrie oppgaver nedenfor
