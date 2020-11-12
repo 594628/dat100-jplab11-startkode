@@ -65,13 +65,27 @@ public class Blogg {
 			return false;
 	}
 	
+	//public String toString() {
+	//	StringBuilder str = new StringBuilder(nesteledig);
+	//	for (int i = 0; i < nesteledig; i++){
+	//		//str.append("\n"+innleggstabell[i].getClass());
+	//		str.append("\n"+innleggstabell[i].getBruker());
+	//		str.append("\n"+innleggstabell[i].getDato());
+	//		str.append("\n"+innleggstabell[i].getLikes());
+	//		//str.append("\n"+innleggstabell[i]);
+	//	}
+//
+	//	//String finalString = str.toString();
+	//	return str.toString();
+	//}
+
 	public String toString() {
 		String str = nesteledig + "\n";
 		for (int i = 0; i < nesteledig; i++){
-			str += innleggstabell[i].getClass() + "\n" + innleggstabell[i].getBruker() + "\n"
-					+ innleggstabell[i].getDato() + "\n" + innleggstabell[i].getLikes() + "\n"
-					+ innleggstabell[i];
+			str += innleggstabell[i].toString();
 		}
+
+		//String finalString = str.toString();
 		return str;
 	}
 	// "\"\\n\""
