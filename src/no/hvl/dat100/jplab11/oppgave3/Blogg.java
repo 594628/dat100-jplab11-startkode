@@ -80,13 +80,11 @@ public class Blogg {
 	//}
 
 	public String toString() {
-		String str = nesteledig + "\n";
+		StringBuilder str = new StringBuilder(nesteledig);
 		for (int i = 0; i < nesteledig; i++){
-			str += innleggstabell[i].toString();
+			str.append("\n" + innleggstabell[i].toString());
 		}
-
-		//String finalString = str.toString();
-		return str;
+		return str.toString();
 	}
 	// "\"\\n\""
 

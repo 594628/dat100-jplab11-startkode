@@ -34,7 +34,7 @@ public class Tekst extends Innlegg {
 	@Override
 	public String toString() {
 		
-		String str = ("TEXT" + "\n" + super.getId() + "\n" + super.getBruker() + "\n" + super.getDato() + "\n" + super.getLikes() + "\n" + this.tekst + "\n"  ); 
+		String str = ("TEKST" + "\n" + super.getId() + "\n" + super.getBruker() + "\n" + super.getDato() + "\n" + super.getLikes() + "\n" + this.tekst + "\n"  );
 		return str; 
 
 	}
